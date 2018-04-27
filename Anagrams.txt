@@ -1,0 +1,55 @@
+    static boolean isAnagram(String a, String b) {
+        // Complete the function
+        
+        a = a.toLowerCase();
+        b = b.toLowerCase();
+        String [] a1 = new String[a.length()];
+        a1 = a.split("");
+        String [] b1 = new String[b.length()];
+        b1 = b.split(""); 
+        int acount = 0;
+        int bcount = 0;
+        int tcount = 0;
+        boolean result = true;
+        
+        if(a.length() == b.length()){
+           
+            int i = 0;
+            int j = 0;
+          //  System.out.println(a1.length);
+            
+            for(i=0; i<a1.length; i++){
+                
+                for(j=0; j<b1.length; j++){
+                    
+                    if(a1[i].equals(a1[j])){
+                        acount++;
+                    }
+                    
+                    if(a1[i].equals(b1[j])){
+                        bcount++;
+                    }                
+                }
+                
+                if(acount == bcount){
+                    result = true;
+                    tcount++;
+                }
+ 
+                if(acount != bcount){
+                    result = false;
+                }                             
+             }
+            if(tcount == a1.length){
+                    return result;
+                } else {
+                return false;
+            }
+            
+         } 
+        
+        else {
+            return false;
+        }
+        
+    }
